@@ -9,8 +9,5 @@ const {signIn} = require('../controller/admin/adminAuth');
 router.post('/signup',signUpValidation,checkValidation,signUp);
 router.post('/signin',signInValidation,checkValidation,signIn)
 
-router.get('/profile',checkAuthorization,(req,res)=>{
-    res.status(200).json({message: 'Authorization passed'});
-})
 
 module.exports = router;

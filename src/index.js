@@ -9,6 +9,9 @@ const {notFoundHandler} = require('./middlewares/common/errorhandler');
 const {errorHandler} = require('./middlewares/common/errorhandler');
 const  userRoutes = require('./routes/userRoutes');
 const  adminRoutes = require('./routes/adminRoutes');
+const  categoryRoutes = require('./routes/categoryRoutes');
+const  productRoutes = require('./routes/productRoutes');
+const  cartRoutes = require('./routes/cartRoutes');
 
 const app = express();
 dotenv.config();
@@ -29,6 +32,9 @@ app.use(express.urlencoded({extended:true}));
 //routing setup
 app.use('/user',userRoutes);
 app.use('/admin',adminRoutes)
+app.use('/category',categoryRoutes)
+app.use('/product',productRoutes);
+app.use('/cart',cartRoutes)
 
 
 //error handling
